@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>springwolf</title>
+    <base href="<%= distFolder %>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="<%= distFolder %>favicon.ico" />
+  </head>
+  <body>
+    <script src="<%= distFolder %>webcomponents-bundle.js"></script>
+    <script src="<%= distFolder %>asyncapi-web-component.js" defer></script>
+    
+    <asyncapi-component
+      schemaUrl="<%= schemaUrl %>"
+      schemaFetchOptions='{"method":"GET","mode":"cors"}'
+      cssImportPath="<%= distFolder %>default.min.css">
+    </asyncapi-component>
+  </body>
+</html>

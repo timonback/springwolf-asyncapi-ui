@@ -1,0 +1,32 @@
+{
+  "name": "asyncapi-ui",
+  "version": "0.0.0",
+  "description": "AsyncApi UI for Springwolf",
+  "scripts": {
+    "build": "./build.sh && npx ejs ./template/index.ejs -f ./template/index.ejs.json -o ./dist/index.html",
+    "build_pages": "./build.sh && npx ejs ./template/index.ejs -f ./template/index.ejs-demo.json -o ./dist/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/timonback/springwolf-asyncapi-ui.git"
+  },
+  "keywords": [
+    "springwolf",
+    "asyncapi",
+    "ui"
+  ],
+  "author": "Timon Back",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/timonback/springwolf-asyncapi-ui/issues"
+  },
+  "homepage": "https://github.com/timonback/springwolf-asyncapi-ui#readme",
+  "devDependencies": {
+    "ejs": "^3.1.9"
+  },
+  "dependencies": {
+    "@asyncapi/react-component": "^1.0.0-next.47",
+    "@asyncapi/web-component": "^1.0.0-next.47",
+    "@webcomponents/webcomponentsjs": "^2.8.0"
+  }
+}

@@ -1,0 +1,4 @@
+{
+    "schemaUrl": "https://raw.githubusercontent.com/springwolf/springwolf-core/master/springwolf-examples/springwolf-kafka-example/src/test/resources/asyncapi.json",
+    "distFolder": "./"
+}
