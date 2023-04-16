@@ -1,35 +1,42 @@
-![version](https://img.shields.io/github/v/release/springwolf/springwolf-asyncapi-ui)
-![springwolf-ui](https://github.com/timonback/springwolf-asyncapi-ui/workflows/build-and-deploy/badge.svg)
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 # Springwolf AsyncApi UI
-##### AsyncApi Web UI for Springwolf
+##### Use Springwolf with the [AsyncApi Initiative UI](https://github.com/asyncapi/asyncapi-react)
 
-Demo: https://demo-asyncapi-ui.springwolf.timonback.de
+Demo: https://timonback.github.io/springwolf-asyncapi-ui/
+
+:warning: This project is a proof of concept to use a different ui for [springwolf](https://github.com/springwolf/springwolf-core). At this point, I do not plan to maintain this actively. But feel free to leave a message in case you find it useful or you have suggestions.
 
 ## Usage
-Add the following dependencies:
+Refer to the [springwolf](https://github.com/springwolf/springwolf-core) project for the general setup.
+
+Now, also add the following to your `build.gradle` file:
 
 ```groovy
+repositories {
+    // ...
+    maven {
+        url "https://maven.pkg.github.com/timonback/springwolf-asyncapi-ui"
+    }
+}
+
 dependencies {
+    // One of the springwolf plugins is required to build the AsyncApi document (general setup)
+    implementation 'io.github.springwolf:springwolf-kafka:0.10.0'
+
+    // Add the ui of this project
     runtimeOnly 'io.github.springwolf:springwolf-asyncapi-ui:0.1.0'
 }
 ```
 
-After starting the application, visit: `localhost:8080/springwolf/asyncapi-ui/index.html`.
+After starting the spring application, visit: `localhost:8080/springwolf/asyncapi-ui/index.html`.
 
 ## Development
-1. Run `npm run build_pages`
+1. Run `npm run build_pages` (Uses asyncApi mock data)
 2. Open `./dist/index.html` in your browser
 
 ## Release
 
 Releasing is done by running the gradle task `publish`. For local development, use `publishToMavenLocal`.
 
-### Setup the signing keys
-
-If you do not have gpg keys yet, generate one with: `gpg --full-gen-key` You will need to set password.
-
-Use the following environment variables:
-- ORG_GRADLE_PROJECT_SIGNINGKEY: Output of `gpg --armor --export-secret-key`
-- ORG_GRADLE_PROJECT_SIGNINGPASSWORD: Password for the gpg key
+The maven package is available on github packages.

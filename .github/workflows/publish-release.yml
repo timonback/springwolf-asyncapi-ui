@@ -1,6 +1,9 @@
 name: Publish release
 
-on: workflow_dispatch
+on:
+  push:
+    tags:
+      - '*'
 
 permissions:
   packages: write

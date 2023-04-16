@@ -4,7 +4,7 @@ on:
   push:
     branches:
       - main
-  workflow_dispatch: {}
+  workflow_dispatch:
 
 permissions:
   # Allow to publish github pages
@@ -28,11 +28,6 @@ jobs:
 
       - name: Build
         run: ./gradlew build
-      - name: Deploy to gh pages 🚀
-        if: github.ref == 'refs/heads/main'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          folder: dist/
 
       - name: Publish package
         if: github.ref == 'refs/heads/main'
@@ -43,3 +38,10 @@ jobs:
           ORG_GRADLE_PROJECT_MAVEN_USERNAME: ${{ secrets.GITHUB_USERNAME }}
           ORG_GRADLE_PROJECT_MAVEN_PASSWORD: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Build pages
+        run: ./gradlew buildPages
+      - name: Deploy to gh pages 🚀
+        if: github.ref == 'refs/heads/main'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: dist/
