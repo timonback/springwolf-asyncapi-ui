@@ -10,13 +10,18 @@ Demo: https://timonback.github.io/springwolf-asyncapi-ui/
 ## Usage
 Refer to the [springwolf](https://github.com/springwolf/springwolf-core) project for the general setup.
 
-Now, also add the following to your `build.gradle` file:
+Now, also add the following to your `build.gradle` file (and replace the username + password):
 
 ```groovy
 repositories {
     // ...
     maven {
+        name = "GitHubPackages"
         url "https://maven.pkg.github.com/timonback/springwolf-asyncapi-ui"
+         credentials {
+            username = "your_github_username"
+            password = "github_personal_access_token_pat_with_read_packages_permission"
+        }
     }
 }
 
@@ -25,7 +30,7 @@ dependencies {
     implementation 'io.github.springwolf:springwolf-kafka:0.10.0'
 
     // Add the ui of this project
-    runtimeOnly 'io.github.springwolf:springwolf-asyncapi-ui:0.1.0'
+    runtimeOnly 'io.github.timonback:springwolf-asyncapi-ui:0.1.0'
 }
 ```
 
