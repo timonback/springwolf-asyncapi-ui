@@ -1,4 +1,5 @@
 {
     "schemaUrl": "../docs",
-    "distFolder": "./"
+    "distFolder": "./",
+    "extraHtml": ""
 }

@@ -1,4 +1,5 @@
 {
     "schemaUrl": "https://raw.githubusercontent.com/springwolf/springwolf-core/master/springwolf-examples/springwolf-kafka-example/src/test/resources/asyncapi.json",
-    "distFolder": "./"
+    "distFolder": "./",
+    "extraHtml": "<script defer src=\"/_vercel/insights/script.js\"></script>"
 }
