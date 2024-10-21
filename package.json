@@ -25,7 +25,7 @@
     "ejs": "^3.1.10"
   },
   "dependencies": {
-    "@asyncapi/react-component": "^2.1.1",
+    "@asyncapi/react-component": "^2.3.4",
     "@asyncapi/web-component": "^2.3.3",
     "@webcomponents/webcomponentsjs": "^2.8.0"
   }
